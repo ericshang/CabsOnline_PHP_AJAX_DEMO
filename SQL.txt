@@ -1,0 +1,24 @@
+CREATE DATABASE  `cabsonline` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE  `cabsonline`.`bookings` (
+`bid` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`customer` TINYTEXT NOT NULL ,
+`contact_phone` INT NOT NULL ,
+`address_pickup` TINYTEXT NOT NULL ,
+`address_pickup_suburb` TINYTEXT NOT NULL,
+`destination_suburb` TINYTEXT NOT NULL,
+`pickup_time` INT NOT NULL ,
+`booking_time` INT NOT NULL ,
+`booking_reference` INT NOT NULL ,
+`booking_status` INT NOT NULL
+) ENGINE = MYISAM CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+ALTER TABLE  `bookings` ADD UNIQUE (
+`booking_reference`
+)
+
+CREATE TABLE  `cabsonline`.`suburb` (
+`sid` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`suburb` TINYTEXT NOT NULL ,
+`city` TINYTEXT NOT NULL
+) ENGINE = MYISAM CHARACTER SET utf8 COLLATE utf8_general_ci;
